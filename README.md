@@ -43,14 +43,19 @@ dotnet add package xunit.runner.visualstudio
 dotnet add package Moq
 
 **Design Patterns Used**
+
 ✔ MVC Pattern
+
 ✔ Repository Pattern
+
 ✔ Dependency Injection
+
 ✔ Singleton Pattern (for logging)
 
 
 
 **Features Implemented**
+
 Roles & Permissions
 Admin
   Full access to all APIs and routes
@@ -63,6 +68,7 @@ Viewer
 
 
 **Logging**
+
 Serilog for structured logging
 Logs to:
 Console
@@ -70,6 +76,7 @@ File (logs/log.txt)
 Logs authentication, role updates, errors, and API calls
 
 **Swagger**
+
 API documentation available at:
 https://localhost:7254/swagger
 
@@ -80,6 +87,7 @@ dotnet ef migrations add InitialCreate
 dotnet ef database update
 
  **How to Run**
+
 Backend
 cd [projectname].API
 dotnet restore
@@ -110,38 +118,58 @@ PUT /api/v1/UserManager/change-role
 }
 
 **Backend (.NET Core)**
-✔ JWT Authentication
-✔ Role-based Authorization with Policies
-✔ Middleware for token & role validation
-✔ Repository + Service Pattern for clean architecture
-✔ APIs:
 
-POST /api/v1/Auth/login → Authenticate user
-POST /api/v1/Auth/register → Register user (with role)
-GET /api/v1/UserManager/all-users → Admin only
-PUT /api/v1/UserManager/change-role → Admin only
-GET /api/v1/Content/view → All roles
-POST /api/v1/Content/add → Admin & Editor only
+ JWT Authentication
+
+ Role-based Authorization with Policies
+
+Middleware for token & role validation
+
+Repository + Service Pattern for clean architecture
+
+APIs:
+
+  POST /api/v1/Auth/login → Authenticate user
+  
+  POST /api/v1/Auth/register → Register user (with role)
+  
+  GET /api/v1/UserManager/all-users → Admin only
+  
+  PUT /api/v1/UserManager/change-role → Admin only
+  
+  GET /api/v1/Content/view → All roles
+  
+  POST /api/v1/Content/add → Admin & Editor only
 
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/790fecef-01e3-4992-8333-890ec6e59603" />
 
 
 **Frontend (React)**
+
 ✔ Login Page → Authenticates user and stores JWT in localStorage
+
 ✔ Role-Based Routing
 Admin → Dashboard + User Management
 Editor → Dashboard (Content edit only)
 Viewer → Read-only dashboard
+
 ✔ Protected Routes using React Router
+
 ✔ Dynamic UI Rendering (hiding unauthorized UI components)
+
 ✔ User Management UI (Admin only)
+
 Fetch all users
 Change user roles dynamically
 
 Role selection during registration
+
 ✔ Full User Management UI for Admin
+
 ✔ Logging with Serilog
+
 ✔ Swagger API documentation
+
 ✔ Unit Testing for backend using xUnit
 
 
@@ -150,6 +178,7 @@ We implemented unit tests for backend logic using xUnit and Moq for mocking depe
 
 Key Areas Tested
 ✔ Authentication Service
+
 Valid user login returns JWT token
 Invalid login throws exception
 
